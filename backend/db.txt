@@ -1,0 +1,20 @@
+db.transactions.updateMany(
+  {},
+  [
+    {
+      $set: {
+        month: {
+          $toLower: {
+            $dateToString: { format: "%B", date: "$dateOfSale" }
+          }
+        }
+      }
+    }
+  ]
+)
+
+
+
+
+
+Use above query in monoo shell to add the field month.
